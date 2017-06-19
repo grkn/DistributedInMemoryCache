@@ -4,6 +4,7 @@ import java.security.cert.CertificateException;
 
 import javax.net.ssl.SSLException;
 
+import org.springframework.boot.ExitCodeEvent;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -31,6 +32,7 @@ public class BootStrap implements Boot{
 				} catch (SSLException | CertificateException | InterruptedException e) {
 					//netty boot error
 					e.printStackTrace();
+					
 				}
 			}
 			

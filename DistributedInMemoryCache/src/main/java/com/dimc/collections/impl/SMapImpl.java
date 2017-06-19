@@ -5,9 +5,18 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import com.dimc.collections.interfaces.SMap;
+import com.dimc.pattern.distributed.observer.CoreObserver;
+import com.dimc.pattern.distributed.observer.DistributedObserver;
+import com.dimc.pattern.distributed.observer.Type;;
 
 public class SMapImpl<K,V> extends HashMap<K, V> implements SMap<K, V>{
 
+	private static CoreObserver coreObserver = new CoreObserver();
+	
+	static{
+		new DistributedObserver(coreObserver);
+	}
+	
 	/**
 	 * 
 	 */
@@ -15,6 +24,7 @@ public class SMapImpl<K,V> extends HashMap<K, V> implements SMap<K, V>{
 
 	@Override
 	public void clear() {
+		coreObserver.setState(this,Type.CLEAR);
 		super.clear();
 	}
 

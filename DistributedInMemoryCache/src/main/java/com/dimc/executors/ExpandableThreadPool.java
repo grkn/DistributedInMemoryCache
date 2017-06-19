@@ -15,10 +15,10 @@ public class ExpandableThreadPool extends ThreadPoolExecutor{
 	}
 
 	public final static  class Builder{
-		private static int coorPoolSize = Server.THREAD_COUNT_SERVER;
-		private static int maximumPoolSize = Server.MAX_THREAD_COUNT;
-		private static long keepAliveTime = 2000;//Two seconds for each threads  for maximum idle timeout
-		private static TimeUnit timeUnit = TimeUnit.MILLISECONDS;
+		private int coorPoolSize = Server.THREAD_COUNT_SERVER;
+		private int maximumPoolSize = Server.MAX_THREAD_COUNT;
+		private long keepAliveTime = 2000;//Two seconds for each threads  for maximum idle timeout
+		private TimeUnit timeUnit = TimeUnit.MILLISECONDS;
 		
 		public Builder setCoorPoolSize(int coorPoolSize) {
 			this.coorPoolSize = coorPoolSize;

@@ -21,9 +21,10 @@ public class FrontController {
 	}
 
 	private void trackRequest(HttpRequest request) {
-		log.info(request.protocolVersion().text());
-		log.info(request.uri());
-		log.info(request.method().name());
+		StringBuilder builder = new StringBuilder(request.protocolVersion().text());
+		builder.append(request.uri());
+		builder.append(request.method().name());
+		log.info(builder.toString());
 	}
 
 	public FullHttpResponse dispatchRequest(HttpRequest request) {

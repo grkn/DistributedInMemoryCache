@@ -1,9 +1,5 @@
 package com.dimc.netty.server;
 
-import static com.dimc.constants.Constants.JSON_CONTENT;
-
-import java.nio.charset.Charset;
-
 import com.dimc.constants.Constants;
 import com.dimc.pattern.dispatcher.FrontController;
 
