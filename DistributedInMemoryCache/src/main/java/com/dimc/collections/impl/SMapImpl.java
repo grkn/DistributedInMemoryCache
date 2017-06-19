@@ -1,11 +1,12 @@
 package com.dimc.collections.impl;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import com.dimc.collections.interfaces.SMap;
 
-public class SMapImpl<K,V> implements SMap<K, V>{
+public class SMapImpl<K,V> extends HashMap<K, V> implements SMap<K, V>{
 
 	/**
 	 * 
@@ -14,73 +15,65 @@ public class SMapImpl<K,V> implements SMap<K, V>{
 
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
+		super.clear();
 	}
 
 	@Override
 	public boolean containsKey(Object key) {
-		// TODO Auto-generated method stub
-		return false;
+	
+		return super.containsKey(key);
 	}
 
 	@Override
 	public boolean containsValue(Object value) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		return super.containsValue(value);
 	}
 
 	@Override
 	public Set<java.util.Map.Entry<K, V>> entrySet() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return super.entrySet();
 	}
 
 	@Override
 	public V get(Object key) {
-		// TODO Auto-generated method stub
-		return null;
+		return super.get(key);
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return super.isEmpty();
 	}
 
 	@Override
 	public Set<K> keySet() {
-		// TODO Auto-generated method stub
-		return null;
+		return super.keySet();
 	}
 
 	@Override
 	public V put(K key, V value) {
-		// TODO Auto-generated method stub
-		return null;
+		return super.put(key, value);
 	}
 
 	@Override
 	public void putAll(Map<? extends K, ? extends V> m) {
-		// TODO Auto-generated method stub
-		
+		super.putAll(m);
 	}
 
 	@Override
 	public V remove(Object key) {
-		// TODO Auto-generated method stub
-		return null;
+		return super.remove(key);
 	}
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return super.size();
 	}
 
 	@Override
 	public Collection<V> values() {
-		// TODO Auto-generated method stub
-		return null;
+		return super.values();
 	}
 
 }
