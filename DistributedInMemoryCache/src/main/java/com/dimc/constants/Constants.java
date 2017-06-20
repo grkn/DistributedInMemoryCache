@@ -14,4 +14,7 @@ public interface Constants {
 	byte[] DEFAULT_CONTENT = new String("{\"response\" : \"NO_RESP\"}").getBytes(Charset.forName(UTF8));
 	
 	
+	//End Point Constants
+	String TRANSFER = "/transfer";
+	
 }

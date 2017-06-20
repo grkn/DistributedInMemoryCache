@@ -42,7 +42,6 @@ public class SMapImpl<K,V> extends HashMap<K, V> implements SMap<K, V>{
 
 	@Override
 	public Set<java.util.Map.Entry<K, V>> entrySet() {
-		
 		return super.entrySet();
 	}
 
@@ -63,16 +62,19 @@ public class SMapImpl<K,V> extends HashMap<K, V> implements SMap<K, V>{
 
 	@Override
 	public V put(K key, V value) {
+		coreObserver.setState(this, Type.PUT);
 		return super.put(key, value);
 	}
 
 	@Override
 	public void putAll(Map<? extends K, ? extends V> m) {
+		coreObserver.setState(this, Type.PUT);
 		super.putAll(m);
 	}
 
 	@Override
 	public V remove(Object key) {
+		coreObserver.setState(this, Type.REMOVE);
 		return super.remove(key);
 	}
 

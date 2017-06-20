@@ -9,9 +9,39 @@ import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 
 import com.dimc.collections.interfaces.SMap;
+import com.esotericsoftware.kryo.Kryo;
+import com.esotericsoftware.kryo.io.Input;
+import com.esotericsoftware.kryo.io.Output;
 
 public class SerializationUtil {
 
+	
+	private final static Kryo kyro = new Kryo();
+	
+	public static byte[] serializeWithKyro(SMap modal){
+		ByteArrayOutputStream bos = new ByteArrayOutputStream();
+		Output output = new Output(bos);
+	    SerializationUtil.kyro.writeObject(output, modal);
+	    output.close();
+	    try {
+			bos.close();
+		} catch (IOException e) {
+		}
+	    return bos.toByteArray();
+	}
+	
+	public static SMap deserializeWithKyro(byte[] arr){
+		ByteArrayInputStream bis = new ByteArrayInputStream(arr);
+		Input input = new Input(bis);
+	    SMap obj = SerializationUtil.kyro.readObject(input, SMap.class);
+	    input.close();
+	    try {
+			bis.close();
+		} catch (IOException e) {
+		}
+	    return obj;
+	}
+	
 	
 	public static byte[] serialize(SMap modal) throws IOException{
 		ByteArrayOutputStream bos = new ByteArrayOutputStream();
